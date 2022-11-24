@@ -1,6 +1,12 @@
 import Head from "next/head"
 
-export default function HelloWorld() {
+import type { Product } from "./api/products"
+
+type Props = {
+    products: Product[]
+}
+
+export default function HelloWorld(props: Props) {
     return (
         <div>
             <Head>
@@ -8,6 +14,7 @@ export default function HelloWorld() {
                 <meta name="description" content="desc for SEO" />
             </Head>
             <h1>Hello World</h1>
+            <pre><code>{JSON.stringify(props, null, 2)}</code></pre>
         </div>
     )
 }
