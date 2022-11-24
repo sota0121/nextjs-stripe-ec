@@ -1,3 +1,11 @@
+## About
+
+This project is a sample of EC site using [Next.js](https://nextjs.org/) and [Stripe](https://stripe.com/), and which is for learning purpose.
+
+I referred to [this article](https://zenn.dev/stripe/books/stripe-nextjs-use-shopping-cart) to create this project.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
