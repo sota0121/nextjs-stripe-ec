@@ -59,6 +59,17 @@ export default async function handler(
     // Get the products from Stripe
     const stripe = getStripe()
     const products = await stripe.products.list()
+
+    // Return empty list if no products found
+    if (!products.data || products.data.length === 0) {
+      res.status(200).json({ ok: true, message: 'No products found' })
+    }
+    await Promise.all(products.data.map(async (product, i) => {
+      const prices = await stripe.prices.list({
+        product: product.id,
+      })
+      products.data[i].prices = prices
+    }))
     res.status(200).json(products)
 
     // // Return a specific product if an id is provided
