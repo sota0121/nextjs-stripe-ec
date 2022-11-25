@@ -1,9 +1,9 @@
 import Head from "next/head"
 
-import type { Product } from "./api/products"
+import type { RespProduct } from "./api/products"
 
 type Props = {
-    products: Product[]
+    products: RespProduct[]
 }
 
 export default function HelloWorld(props: Props) {
